@@ -5,7 +5,9 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "PORT=8080 NODE_ENV=production node server.js",
-    "generateapidoc": "apidoc -i . -e node_modules/ -o apidoc/"
+    "generateapidoc": "apidoc -i . -e node_modules/ -o apidoc/",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -14,7 +16,7 @@
     "dayjs": "^1.8.28",
     "dotenv": "8.2.0",
     "express": "^4.17.1",
-    "forever-monitor": "^1.7.2",
+    "forever-monitor": "^3.0.2",
     "immutable": "^4.0.0-rc.12",
     "intercept-stdout": "^0.1.2",
     "ip": "^1.1.5",
@@ -38,7 +40,8 @@
     "redux-thunk": "^2.3.0",
     "request": "^2.88.2",
     "serve-static": "^1.14.1",
-    "server-sent-events": "^1.0.1"
+    "server-sent-events": "^1.0.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "apidoc": "^0.23.0",
@@ -46,5 +49,6 @@
     "cssnano": "^4.1.10",
     "redux-devtools-extension": "^2.13.8",
     "tailwindcss": "^1.4.6"
-  }
+  },
+  "snyk": true
 }
